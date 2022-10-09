@@ -2,78 +2,39 @@
 // Created by Haibin Cao on 10/7/22.
 //
 
+#include "Game.h"
 #include "Ball.h"
 
-Ball::Ball()
-: window(sf::VideoMode(1920, 1080), "Deez"), ball()
+Game::Game()
+: window(sf::VideoMode(1200, 1200), "Deez")
 {
-    ball.setRadius(100.f);
-    ball.setPosition({700.f,400.f});
-    ball.setFillColor(sf::Color::Blue);
 }
 
-void Ball::run()
+void Game::run()
 {
+    Ball ball_1(80, 300, 200, sf::Color::Red, 0.5, 0.5);
+    Ball ball_2(50, 500, 700, sf::Color::Blue, 1, 1);
+
     while(window.isOpen())
     {
-        processEvents();
-        update();
-        bounce(sf::Vector2i(1920, 1080));
-        render();
-    }
-}
-
-void Ball::processEvents()
-{
-    sf::Event event;
-    while(window.pollEvent(event))
+        sf::Event event;
+        while(window.pollEvent(event))
         {
-            if(event.type == sf::Event::Closed)
-            {
-                window.close();
+            switch (event.type) {
+                case sf::Event::Closed : {
+                    window.close();
+                    break;
+                }
             }
         }
-}
-
-
-void Ball::update()
-{
-}
-
-void Ball::render()
-{
-    window.clear();
-    window.draw(ball);
-    window.display();
-}
-
-void Ball::bounce(sf::Vector2i window)
-{
-    int width = window.x;
-    int height = window.y;
-
-    if(ball.getPosition().x > (width - ball.getRadius()*2))
-    {
-        speedX = -speedX;
+        window.clear(sf::Color::Black);
+        window.draw(ball_1);
+        window.draw(ball_2);
+        ball_1.bounce(sf::Vector2i(1200,1200));
+        ball_2.bounce(sf::Vector2i(1200,1200));
+        window.display();
     }
-    else if(ball.getPosition().x < 0)
-    {
-        speedX = -speedX;
-    }
-    else if(ball.getPosition().y > (height - ball.getRadius()*2))
-    {
-        speedY = -speedY;
-    }
-    else if(ball.getPosition().y < 0)
-    {
-        speedY = -speedY;
-    }
-
-    ball.move(speedX, speedY);
 }
 
-void Ball::setSpeed(double speedX, double speedY)
-{
-    Ball::speedX = speedX;
-    Ball::speedY = speedY;
-}
+
+

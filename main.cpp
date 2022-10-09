@@ -1,9 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Game.h"
 #include "Ball.h"
 
 int main()
 {
-    Ball ball;
-    ball.run();
+    Game game;
+    game.run();
 }

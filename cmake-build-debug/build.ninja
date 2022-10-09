@@ -53,6 +53,13 @@ build CMakeFiles/bouncingBall.dir/main.cpp.o: CXX_COMPILER__bouncingBall_Debug /
   OBJECT_DIR = CMakeFiles/bouncingBall.dir
   OBJECT_FILE_DIR = CMakeFiles/bouncingBall.dir
 
+build CMakeFiles/bouncingBall.dir/Game.cpp.o: CXX_COMPILER__bouncingBall_Debug /Users/haibin/CLionProjects/bouncingBall/Game.cpp || cmake_object_order_depends_target_bouncingBall
+  DEP_FILE = CMakeFiles/bouncingBall.dir/Game.cpp.o.d
+  FLAGS = -std=c++11 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  INCLUDES = -isystem /usr/local/include
+  OBJECT_DIR = CMakeFiles/bouncingBall.dir
+  OBJECT_FILE_DIR = CMakeFiles/bouncingBall.dir
+
 build CMakeFiles/bouncingBall.dir/Ball.cpp.o: CXX_COMPILER__bouncingBall_Debug /Users/haibin/CLionProjects/bouncingBall/Ball.cpp || cmake_object_order_depends_target_bouncingBall
   DEP_FILE = CMakeFiles/bouncingBall.dir/Ball.cpp.o.d
   FLAGS = -std=c++11 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
@@ -68,7 +75,7 @@ build CMakeFiles/bouncingBall.dir/Ball.cpp.o: CXX_COMPILER__bouncingBall_Debug /
 #############################################
 # Link the executable bouncingBall
 
-build bouncingBall: CXX_EXECUTABLE_LINKER__bouncingBall_Debug CMakeFiles/bouncingBall.dir/main.cpp.o CMakeFiles/bouncingBall.dir/Ball.cpp.o | /usr/local/lib/libsfml-graphics.2.5.1.dylib /usr/local/lib/libsfml-audio.2.5.1.dylib /usr/local/lib/libsfml-network.2.5.1.dylib /usr/local/lib/libsfml-window.2.5.1.dylib /usr/local/lib/libsfml-system.2.5.1.dylib
+build bouncingBall: CXX_EXECUTABLE_LINKER__bouncingBall_Debug CMakeFiles/bouncingBall.dir/main.cpp.o CMakeFiles/bouncingBall.dir/Game.cpp.o CMakeFiles/bouncingBall.dir/Ball.cpp.o | /usr/local/lib/libsfml-graphics.2.5.1.dylib /usr/local/lib/libsfml-audio.2.5.1.dylib /usr/local/lib/libsfml-network.2.5.1.dylib /usr/local/lib/libsfml-window.2.5.1.dylib /usr/local/lib/libsfml-system.2.5.1.dylib
   FLAGS = -std=c++11 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libsfml-graphics.2.5.1.dylib  /usr/local/lib/libsfml-audio.2.5.1.dylib  /usr/local/lib/libsfml-network.2.5.1.dylib  /usr/local/lib/libsfml-window.2.5.1.dylib  /usr/local/lib/libsfml-system.2.5.1.dylib
   OBJECT_DIR = CMakeFiles/bouncingBall.dir

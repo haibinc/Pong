@@ -2,27 +2,19 @@
 // Created by Haibin Cao on 10/7/22.
 //
 
-#ifndef BOUNCINGBALL_BALL_H
-#define BOUNCINGBALL_BALL_H
+#ifndef BOUNCINGBALL_GAME_H
+#define BOUNCINGBALL_GAME_H
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "Ball.h"
 
-class Ball {
+class Game {
 public:
-    Ball();
+    Game();
     void run();
-    void bounce(sf::Vector2i window);
-    void setSpeed(double speedX, double speedY);
 private:
-    void processEvents();
-    void update();
-    void render();
-private:
-    double speedX = 0.2;
-    double speedY = 0.2;
     sf::RenderWindow window;
-    sf::CircleShape ball;
 };
 
 
-#endif //BOUNCINGBALL_BALL_H
+#endif //BOUNCINGBALL_GAME_H
