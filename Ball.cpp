@@ -4,46 +4,60 @@
 
 #include "Ball.h"
 
-//Ball::Ball()
-//: Ball(100, 300, 300, sf::Color::Red, 0.1, 0.1)
-//{
-//
-//}
-
-Ball::Ball(const float& radius, const float& positionX, const float& positionY, const sf::Color& color, double speedX, double speedY)
+Ball::Ball()
+: Ball(100, 300, 300, sf::Color::Red, sf::Vector2f({0.3,0.3}))
 {
-    ball.setRadius(radius);
-    ball.setPosition(positionX, positionY);
-    ball.setFillColor(color);
-    this->speedX = speedX;
-    this->speedY = speedY;
+
 }
 
-void Ball::bounce(sf::Vector2i window)
+Ball::Ball(const float& radius, const float& positionX, const float& positionY, const sf::Color& color, sf::Vector2f speed)
+: speed(speed)
 {
-    int width = window.x;
-    int height = window.y;
-
-    if(ball.getPosition().x > (width - ball.getRadius()*2))
-    {
-        speedX = -speedX;
-    }
-    else if(ball.getPosition().x < 0)
-    {
-        speedX = -speedX;
-    }
-    else if(ball.getPosition().y > (height - ball.getRadius()*2))
-    {
-        speedY = -speedY;
-    }
-    else if(ball.getPosition().y < 0)
-    {
-        speedY = -speedY;
-    }
-    ball.move(speedX, speedY);
+    setRadius(radius);
+    setPosition(positionX, positionY);
+    setFillColor(color);
 }
 
-void Ball::draw(sf::RenderTarget& window, sf::RenderStates states) const
+void Ball::bounceCollision(sf::Vector2u window)
 {
-    window.draw(ball, states);
+    if(getGlobalBounds().top + getGlobalBounds().height >= window.y)
+    {
+        speed.y = -speed.y;
+    }
+    else if(getGlobalBounds().top <= 0)
+    {
+        speed.y = -speed.y;
+    }
+    else if(getGlobalBounds().left + getGlobalBounds().width >= window.x)
+    {
+        speed.x = -speed.x;
+        counter1++;
+        std::cout << "Paddle 1 scored " << counter1 << " point(s)." << std::endl;
+    }
+    else if(getGlobalBounds().left <= 0)
+    {
+        speed.x = -speed.x;
+        counter2++;
+        std::cout << "Paddle 2 scored " << counter2 << " point(s)." << std::endl;
+    }
+    move(speed.x,speed.y);
+}
+
+void Ball::ballCollision(sf::FloatRect left, sf::FloatRect right)
+{
+    if(left.intersects(getGlobalBounds()))
+    {
+        speed.x = -speed.x;
+        speed.y = -speed.y;
+    }
+    else if(right.intersects(getGlobalBounds()))
+    {
+        speed.x = -speed.x;
+        speed.y = -speed.y;
+    }
+}
+
+sf::FloatRect Ball::getGlobalBounds() const
+{
+    return Shape::getGlobalBounds();
 }

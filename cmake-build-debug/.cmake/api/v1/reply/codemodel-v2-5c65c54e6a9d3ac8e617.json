@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "bouncingBall::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-bouncingBall-Debug-559482cf48e13df8ae24.json",
+					"jsonFile" : "target-bouncingBall-Debug-3283867a202beb62c7c2.json",
 					"name" : "bouncingBall",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/haibin/CLionProjects/bouncingBall/cmake-build-debug",
-		"source" : "/Users/haibin/CLionProjects/bouncingBall"
+		"build" : "/Users/haibin/CLionProjects/Pong/cmake-build-debug",
+		"source" : "/Users/haibin/CLionProjects/Pong"
 	},
 	"version" : 
 	{

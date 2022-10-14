@@ -7,8 +7,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Ball.h"
+#include "Paddle.h"
 
-class Game {
+class Game
+{
 public:
     Game();
     void run();

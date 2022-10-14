@@ -5,21 +5,24 @@
 #ifndef BOUNCINGBALL_BALL_H
 #define BOUNCINGBALL_BALL_H
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include <string>
-#include "Game.h"
+#include "Paddle.h"
 
-class Ball : public sf::Drawable
+class Ball : public sf::CircleShape
 {
 public:
     Ball();
-    Ball(const float& radius, const float& positionX, const float& positionY, const sf::Color& color, double speedX, double speedY);
-    void bounce(sf::Vector2i window);
+    Ball(const float& radius, const float& positionX, const float& positionY, const sf::Color& color, sf::Vector2f speed);
+    void bounceCollision(sf::Vector2u window);
+    void ballCollision(sf::FloatRect left, sf::FloatRect right);
+    sf::FloatRect getGlobalBounds() const;
 private:
-    float radius, positionX, positionY;
+    int counter1 = 0;
+    int counter2 = 0;
     sf::Color color;
-    double speedX, speedY;
-    sf::CircleShape ball;
-    virtual void draw(sf::RenderTarget& window, sf::RenderStates states) const;
+    sf::Vector2f speed;
+    Paddle paddle;
 };
 
 

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/haibin/CLionProjects/bouncingBall/cmake-build-debug"
+			"value" : "/Users/haibin/CLionProjects/Pong/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/haibin/CLionProjects/bouncingBall"
+			"value" : "/Users/haibin/CLionProjects/Pong"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/haibin/CLionProjects/bouncingBall/cmake-build-debug"
+			"value" : "/Users/haibin/CLionProjects/Pong/cmake-build-debug"
 		},
 		{
 			"name" : "bouncingBall_IS_TOP_LEVEL",
@@ -1135,7 +1135,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/haibin/CLionProjects/bouncingBall"
+			"value" : "/Users/haibin/CLionProjects/Pong"
 		}
 	],
 	"kind" : "cache",
